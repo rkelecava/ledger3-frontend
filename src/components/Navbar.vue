@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="/">Kelecava Ledger</a>
+        <a class="navbar-brand" href="/">{{ appName }}</a>
         <button v-show='isLoggedIn === true' class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,15 +22,18 @@
 
 <script>
 import AUTH from '@/services/AUTH'
+import MISC from '@/services/MISC'
 
 export default {
     data () {
         return {
-            isLoggedIn: false
+            isLoggedIn: false,
+            appName: ''
         }
     },
     beforeMount() {
         this.isLoggedIn = AUTH.isLoggedIn()
+        this.getAppName()
     },
     methods: {
         logout () {
@@ -39,6 +42,16 @@ export default {
         },
         goToAccountManager () {
             this.$router.push('/account-manager')
+        },
+        getAppName () {
+            MISC.getName()
+            .then(res => {
+                this.appName = res.data.name
+            })
+            .catch(err => {
+                console.log(err.response.data)
+            })
+            .finally(() => {})
         }
     }
 }

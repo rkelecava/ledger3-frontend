@@ -56,7 +56,7 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <button @click="deleteEntry(account._id, entry._id)" class="btn btn-danger btn-block">Delete</button>
+                                            <button @click="deleteEntry(account._id, entryA._id)" class="btn btn-danger btn-block">Delete</button>
                                         </div>
                                     </div>
                                 </div>
@@ -176,7 +176,7 @@ export default {
                this.alerts.push({ type: 'alert alert-warning alert-dismissible fade show', msg: 'Amount must be a number greater than zero' })
                return window.scrollTo(0,0)
             }
-            ENTRIES.update(this.entry._id, this.entry)
+            ENTRIES.update(this.entryA._id, this.entryA)
             .then(res => {
                 this.$router.push('/entries/' + this.account._id)
             })
