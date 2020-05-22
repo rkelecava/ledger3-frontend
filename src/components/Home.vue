@@ -105,7 +105,6 @@ export default {
     getAccountColor (balance, type) {
       var color = false
       if (type == 'asset') {
-        console.log('asset')
         if (balance >= 0) {
           color = true
         }
@@ -114,7 +113,6 @@ export default {
           color = true
         }
       }
-      console.log(color)
       return color
     }
   }

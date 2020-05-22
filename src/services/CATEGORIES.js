@@ -1,21 +1,19 @@
 import API from '@/services/API'
 
-var token = 'Bearer ' + localStorage.authToken
-
 export default {
     getAll (id) {
-        return API().get('categories/' + id, { headers: {Authorization: token }})
+        return API().get('categories/' + id)
     },
     add (id, payload) {
-        return API().post('categories/add/' + id, payload, { headers: {Authorization: token }})
+        return API().post('categories/add/' + id, payload)
     },
     deleteOne (user, category) {
-        return API().delete('categories/delete/' + user + '/' + category, { headers: {Authorization: token }})
+        return API().delete('categories/delete/' + user + '/' + category)
     },
     getOne (category) {
-        return API().get('categories/getOne/' + category, { headers: {Authorization: token }})
+        return API().get('categories/getOne/' + category)
     },
     update (category, payload) {
-        return API().put('categories/update/' + category, payload, { headers: {Authorization: token }})
+        return API().put('categories/update/' + category, payload)
     }
 }
