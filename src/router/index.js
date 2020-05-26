@@ -9,6 +9,7 @@ import AccountManager from '@/components/AccountManager'
 import AddAccount from '@/components/AddAccount'
 import EditAccount from '@/components/EditAccount'
 import CategoryManager from '@/components/CategoryManager'
+import Reporting from '@/components/Reporting'
 import AddCategory from '@/components/AddCategory'
 import EditCategory from '@/components/EditCategory'
 import Entries from '@/components/Entries'
@@ -63,6 +64,11 @@ export default new Router({
       path: '/category-manager',
       name: 'CategoryManager',
       component: CategoryManager
+    },
+    {
+      path: '/reporting',
+      name: 'Reporting',
+      component: Reporting
     },
     {
       path: '/add-category',

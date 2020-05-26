@@ -13,6 +13,9 @@
                     <router-link class="nav-link" :to="{name: 'CategoryManager'}">Category Manager</router-link>
                 </li>
                 <li class="nav-item">
+                    <router-link class="nav-link" :to="{name: 'Reporting'}">Reporting</router-link>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="javascript:void(0);" @click='logout()'>Logout</a>
                 </li>
             </ul>
